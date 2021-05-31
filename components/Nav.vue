@@ -19,7 +19,7 @@
 .base{
   display:flex;
   justify-content: space-between;
-  background-color: rgb(19, 246, 170);
+  background-color: #B33F50;
   border-radius:50px;
   font-size:16px;
   margin:0 auto;
@@ -35,13 +35,13 @@
 .navbar1 a {
   display: block;
   text-decoration: none;
-  color: rgb(102, 102, 102);
+  color: white;
   padding: 4px 4px 4px 4px;
 }
 .navbar2 a {
   display: block;
   text-decoration: none;
-  color: rgb(102, 102, 102);
+  color: white;
   padding: 4px 12px 4px 4px;
 }
 .navbar2 a:hover {
