@@ -5,14 +5,14 @@
     </div>
     <div class="signupbase">
       <div class="heading">
-        <h1>Login</h1>
-        <a>Don't have an account? </a><NuxtLink to="/signup">Sign up</NuxtLink>
+        <h1>Recommend new resource</h1>
+        <a>We will look at it and add it to our database! </a>
       </div>
       <hr>
       <div class="inputs">
-        <a>Email</a> <br>
+        <a>Resource name</a> <br>
         <input type="text" name="" id=""><br>
-        <a>Password</a> <br>
+        <a>Link to res</a> <br>
         <input type="text" name="" id=""> <br>
         <hr>
         <input class="button" type="button" value="Login">

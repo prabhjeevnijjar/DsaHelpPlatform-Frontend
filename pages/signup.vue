@@ -24,13 +24,6 @@
         <hr>
         <input class="button" type="button" value="Signup">
       </div>
-
-      <div></div>
-
-      <div></div>
-
-      <div></div>
-
     </div>
   </div>
 </template>
@@ -39,7 +32,7 @@
 export default {}
 </script>
 
-<style>
+<style scoped>
 .signupbase{
   width: 50%;
   margin:  auto;
@@ -77,5 +70,10 @@ export default {}
 .button:hover{
   -webkit-box-shadow: 1px 5px 15px -11px #000000; 
 box-shadow: 1px 5px 15px -11px #000000;
+}
+@media screen and (max-width: 844px){
+  .signupbase {
+    width:none;
+  }
 }
 </style>

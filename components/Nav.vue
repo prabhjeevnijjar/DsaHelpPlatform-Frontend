@@ -2,20 +2,22 @@
 <div class ="base">
   <div class="navbar1">
     <ul>
-      <li><a href="http://">Helper</a></li>
+      <li><a href="http://">DSA FINDER</a></li>
     </ul>
   </div>
   <div class="navbar2">
     <ul>
+      <li><a href="http://"><NuxtLink to="/recommend">Recommend</NuxtLink></a></li>
       <li><a href="http://"><NuxtLink to="/">Homepage</NuxtLink></a></li>
-      <li><a href="http://"><NuxtLink to="/signup">SignUp</NuxtLink></a></li>
-      <li><a href="http://"><NuxtLink to="/login">Login</NuxtLink></a></li>
+      <li><a href="http://"><NuxtLink to="/signup">Sign Up</NuxtLink></a></li>
+      <li><a href="http://"><NuxtLink to="/signin">Login</NuxtLink></a></li>
+      
     </ul>
   </div>
 </div>
 </template>
 
-<style>
+<style scoped>
 .base{
   display:flex;
   justify-content: space-between;
@@ -45,13 +47,13 @@
   padding: 4px 12px 4px 4px;
 }
 .navbar2 a:hover {
-  background-color: rgb(0, 194, 129);
+  background-color: #C76A65;
   border-radius:50px;
   padding: 3px 8px 3px 8px;
   color: aliceblue;
 }
 .navbar1 a:hover {
-  background-color: rgb(0, 194, 129);
+  background-color: #C76A65;
   border-radius:50px;
   padding: 3px 8px 3px 8px;
   color: aliceblue;
@@ -65,13 +67,9 @@ li {
   display:flex;
    list-style-type: none;
 }
-@media screen and (max-width: 600){
-            /* .base{
-                flex-direction: column;
-            
-            } */
-  .navbar2{
-    flex-direction: column;
+@media screen and (max-width: 600px){
+  .signupbase{
+    width:95%;
   }
-        }
+}
 </style>
