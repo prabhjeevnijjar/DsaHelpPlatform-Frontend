@@ -12,15 +12,15 @@
 
       <div class="inputs">
         <a>First name</a>  <br>
-        <input type="text"> <br>
+        <input v-model="fname" type="text"> <br>
         <a>Last Name</a> <br>
-        <input type="text" name="" id=""> <br>
+        <input v-model="lname" type="text" name="" id=""> <br>
         <a>Email</a> <br>
-        <input type="text" name="" id=""><br>
+        <input v-model="email" lname type="text" name="" id=""><br>
         <a>Password</a> <br>
-        <input type="text" name="" id=""> <br>
-        <a>Confirm Password</a> <br>
-        <input type="text" name="" id=""> <br>
+        <input v-model="password" type="text" name="" id=""> <br>
+        <a>Confirm password</a> <br>
+        <input v-model="cpassword" type="text" name="" id=""> <br>
         <hr>
         <input @click="postSignupData()" class="button" type="button" value="Signup">
       </div>
@@ -32,22 +32,35 @@
 export default {
   data: function() {
     return {
-      serverResponse :{}
+      serverResponse :{},
+      fname:"",
+      lname:"",
+      email:"",
+      password:"",
+      cpassword:"",
+
+      postData:{
+        FirstName: this.fname,
+        LastName:this.lname,
+        Email:this.email,
+        Password:this.password,
+        PasswordConfirmation:this.cpassword
+      }
       }
   },
   methods:{
     async postSignupData() {
-     await this.$axios.$get('https://jsonplaceholder.typicode.com/comments')
+     await this.$axios.$post('http://localhost:3001/homepage/resource', {
+        body: this.postData
+      })
       .then((serverResponse)=>{
         this.serverResponse = serverResponse;
         console.log("res data: ",serverResponse);
       })
       .catch((error)=>{
         console.log("error: ",error);
-      })
-    
+      }) 
   }
-
   }
 }
 </script>

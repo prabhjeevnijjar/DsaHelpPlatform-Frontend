@@ -5,19 +5,19 @@
             <a>{{item.name}}</a>
           </div>
           <div class="contentcard_source">
-            <a :href="item.resourcelink">link</a>
+            <a :href="item.resourcelink">click here to access</a>
           </div>
           <div class="contentcard_tags">
-            #linkedlist #array #backtracking
+            #{{item.resourcetype}} #{{item.resourcesubtype["item"]}} 
           </div>        
           <div class="contentcard_socials">
             <div class="contentcard_socials_like">
               <a>Upvote</a>
-              <a>120</a>
+              <a>{{item.upvotecount}}</a>
             </div>
             <div class="contentcard_socials_dislike">
               <a>Downvote</a>
-              <a>5</a>
+              <a>{{item.downvotecount}}</a>
             </div>
             <div class="contentcard_socials_bookmark">
               <input type="button" value="save">
