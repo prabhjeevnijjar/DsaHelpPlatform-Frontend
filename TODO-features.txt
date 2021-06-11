@@ -1,3 +1,4 @@
 TODO
 realtime comment section
 bookmark/save feature for user
+add hashtags in database as well and render them in front end

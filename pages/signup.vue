@@ -22,15 +22,36 @@
         <a>Confirm Password</a> <br>
         <input type="text" name="" id=""> <br>
         <hr>
-        <input class="button" type="button" value="Signup">
+        <input @click="postSignupData()" class="button" type="button" value="Signup">
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data: function() {
+    return {
+      serverResponse :{}
+      }
+  },
+  methods:{
+    async postSignupData() {
+     await this.$axios.$get('https://jsonplaceholder.typicode.com/comments')
+      .then((serverResponse)=>{
+        this.serverResponse = serverResponse;
+        console.log("res data: ",serverResponse);
+      })
+      .catch((error)=>{
+        console.log("error: ",error);
+      })
+    
+  }
+
+  }
+}
 </script>
+
 
 <style scoped>
 .signupbase{
