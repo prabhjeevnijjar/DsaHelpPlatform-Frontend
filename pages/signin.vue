@@ -10,19 +10,46 @@
       </div>
       <hr>
       <div class="inputs">
-        <a>Email</a> <br>
-        <input type="text" ><br>
-        <a>Password</a> <br>
-        <input type="text" > <br>
-        <hr>
-        <input class="button" type="button" value="Login">
+        <form @submit.prevent="postSignupData">
+          <a>Email</a> <br>
+          <input v-model.lazy="email" type="text" required><br>
+          <a>Password</a> <br>
+          <input v-model.lazy="password" type="text" required> <br>
+          <hr>
+          <input class="button" type="submit" value="Login">
+        </form>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data: function() {
+    return {
+      serverResponse :{},
+      email:"",
+      password:"",
+    }
+  },
+  methods:{
+    async postSignupData() {
+    const data = {
+      email: this.email,
+      password: this.password,
+    }
+    console.log(data);
+     await this.$axios.$post('http://localhost:3001/api/login', data)
+      .then((serverResponse)=>{
+        this.serverResponse = serverResponse;
+        console.log("res data: ",serverResponse);
+      })
+      .catch((error)=>{
+        console.log("error: ",error);
+      }) 
+  }
+  }
+}
 </script>
 
 <style scoped>

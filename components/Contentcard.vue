@@ -22,7 +22,7 @@
             <div class="contentcard_socials_bookmark">
               <input type="button" value="save">
             </div>
-            <div>{{serverResponse.data["0"].postedDate}}</div>
+            <div>{{serverResponse.data["0"]}}</div>
           </div>
           <hr>
       </div>
@@ -44,6 +44,9 @@ export default {
       .catch((error)=>{
         console.log("error: ",error);
       }) 
+  },
+  methods: {
+      async upVote()
   }
 }
 </script>
