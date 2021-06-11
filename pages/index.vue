@@ -1,11 +1,12 @@
 <template>
 <div 
+  components: { Searchbar },
   class="basecontainer">
   <div class="nav">
       <Nav />
   </div>
-  <div class="searchbar">
-    <input type="text" placeholder="Search">
+  <div class="search">
+    <Searchbar />
   </div>
   <div class="datacontainer">
     <div class="leftcolumn">
@@ -27,7 +28,6 @@
 </template>
 
 <script>
-
 </script>
 
 <style>

@@ -11,9 +11,9 @@
       <hr>
       <div class="inputs">
         <a>Email</a> <br>
-        <input type="text" name="" id=""><br>
+        <input type="text" ><br>
         <a>Password</a> <br>
-        <input type="text" name="" id=""> <br>
+        <input type="text" > <br>
         <hr>
         <input class="button" type="button" value="Login">
       </div>

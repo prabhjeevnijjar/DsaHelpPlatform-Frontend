@@ -11,18 +11,20 @@
       <hr>
 
       <div class="inputs">
-        <a>First name</a>  <br>
-        <input v-model="fname" type="text"> <br>
-        <a>Last Name</a> <br>
-        <input v-model="lname" type="text" name="" id=""> <br>
-        <a>Email</a> <br>
-        <input v-model="email" lname type="text" name="" id=""><br>
-        <a>Password</a> <br>
-        <input v-model="password" type="text" name="" id=""> <br>
-        <a>Confirm password</a> <br>
-        <input v-model="cpassword" type="text" name="" id=""> <br>
-        <hr>
-        <input @click="postSignupData()" class="button" type="button" value="Signup">
+        <form @submit.prevent="postSignupData">
+          <a>First name</a>  <br>
+          <input v-model.lazy="fname" type="text" required > <br>
+          <a>Last Name</a> <br>
+          <input v-model.lazy="lname" type="text" required> <br>
+          <a>Email</a> <br>
+          <input v-model.lazy="email" lname type="text" required><br>
+          <a>Password</a> <br>
+          <input v-model.lazy="password" type="text" required> <br>
+          <a>Confirm password</a> <br>
+          <input v-model.lazy="cpassword" type="text" required> <br>
+          <hr>
+          <input  class="button" type="submit" value="Signup">
+        </form>
       </div>
     </div>
   </div>
@@ -38,21 +40,18 @@ export default {
       email:"",
       password:"",
       cpassword:"",
-
-      postData:{
-        FirstName: this.fname,
-        LastName:this.lname,
-        Email:this.email,
-        Password:this.password,
-        PasswordConfirmation:this.cpassword
-      }
-      }
+      
+    }
   },
   methods:{
     async postSignupData() {
-     await this.$axios.$post('http://localhost:3001/homepage/resource', {
-        body: this.postData
-      })
+       const data = {
+        FirstName: this.fname,
+          LastName: this.lname,
+          Email: this.email,
+          Password: this.password,
+    }
+     await this.$axios.$post('http://localhost:3001/api/register', data)
       .then((serverResponse)=>{
         this.serverResponse = serverResponse;
         console.log("res data: ",serverResponse);

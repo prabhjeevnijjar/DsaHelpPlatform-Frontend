@@ -10,8 +10,7 @@
       <li><a href="http://"><NuxtLink to="/recommend">Recommend</NuxtLink></a></li>
       <li><a href="http://"><NuxtLink to="/">Homepage</NuxtLink></a></li>
       <li><a href="http://"><NuxtLink to="/signup">Sign Up</NuxtLink></a></li>
-      <li><a href="http://"><NuxtLink to="/signin">Login</NuxtLink></a></li>
-      
+      <li><a href="http://"><NuxtLink to="/signin">Login</NuxtLink></a></li>    
     </ul>
   </div>
 </div>
