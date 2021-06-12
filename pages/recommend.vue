@@ -10,19 +10,47 @@
       </div>
       <hr>
       <div class="inputs">
-        <a>Resource name</a> <br>
-        <input type="text" name="" id=""><br>
-        <a>Link to res</a> <br>
-        <input type="text" name="" id=""> <br>
-        <hr>
-        <input class="button" type="button" value="Login">
+        <form @submit.prevent="postSignupData">
+          <a>Resource name</a> <br>
+          <input v-model.lazy="resName" type="text" required><br>
+          <a>Link to res</a> <br>
+          <input v-model.lazy="link" type="text" required> <br>
+          <hr>
+          <input class="button" type="submit" value="Submit">
+        </form>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+
+  data: function() {
+    return {
+      serverResponse :{},
+      link:"",
+      resName:""
+    }
+  },
+  methods:{
+    async postSignupData() {
+      const data = {
+        link: this.link,
+        description: this.resName
+      }
+     await this.$axios.$post('http://localhost:3001/homepage/recommend-resource', data)
+      .then((serverResponse)=>{
+        this.serverResponse = serverResponse;
+        console.log("res data: ",serverResponse);
+      })
+      .catch((error)=>{
+        console.log("error: ",error);
+      }) 
+    }
+  }
+}
+
 </script>
 
 <style scoped>
