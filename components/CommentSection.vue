@@ -1,11 +1,13 @@
 <template>
     <div class="root">
-        <div class="showComments">
-            
+        <div class="selectedComment">
+            <StaticContentCard title="title"/>
         </div>
+        
         <div class="addComment">
             <div class="addComment_heading">
                 <h5>Leave a review</h5>
+                <a href="">{{$route.query.link}}</a> {{$route.query.link}}
             </div>
             <div class="addComment_input">
                 <form >
@@ -16,8 +18,14 @@
         </div>
     </div>
 </template>
-<script>
-    
+<script>    
+export default{
+    data () {
+      return {
+        title: 'Example blog post'
+      }
+    }
+}
 </script>
 <style scoped>
     .addComment_heading h5{

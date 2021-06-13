@@ -18,7 +18,18 @@
               <a>{{item.downvotecount}}</a>
             </div>
             <div class="contentcard_socials_comment">
-              <NuxtLink to="/comments"><img src="/comment.png" alt="comment section"></NuxtLink>
+              <nuxt-link :to="{ path: '/comments',
+               query: {
+                  link: item.resourcelink,
+                  name: item.name,
+                  commentCount: item.commentcount,
+                  upvoteCount: item.upvotecount,
+                  downVoteCount: item.downvotecount,
+               }}">
+               <img src="/comment.png" alt="comment section">
+               </nuxt-link>
+
+              <!-- <NuxtLink to="/comments"><img src="/comment.png" alt="comment section"></NuxtLink> -->
               <a>{{item.commentcount}}</a>
             </div>
             <div class="contentcard_socials_bookmark">
