@@ -2,15 +2,15 @@
 <div class ="base">
   <div class="navbar1">
     <ul>
-      <li><a href="http://">DSA FINDER</a></li>
+      <li><a><NuxtLink to="/">DSAFinder</NuxtLink></a></li>
     </ul>
   </div>
   <div class="navbar2">
     <ul>
-      <li><a href="http://"><NuxtLink to="/recommend">Recommend</NuxtLink></a></li>
-      <li><a href="http://"><NuxtLink to="/">Homepage</NuxtLink></a></li>
-      <li><a href="http://"><NuxtLink to="/signup">Sign Up</NuxtLink></a></li>
-      <li><a href="http://"><NuxtLink to="/signin">Login</NuxtLink></a></li>    
+      <li><a><NuxtLink to="/recommend">Recommend</NuxtLink></a></li>
+      <li><a ><NuxtLink to="/">Homepage</NuxtLink></a></li>
+      <li><a ><NuxtLink to="/signup">Sign Up</NuxtLink></a></li>
+      <li><a ><NuxtLink to="/signin">Login</NuxtLink></a></li>    
     </ul>
   </div>
 </div>

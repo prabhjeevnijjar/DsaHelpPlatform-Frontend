@@ -18,7 +18,7 @@
               <a>{{item.downvotecount}}</a>
             </div>
             <div class="contentcard_socials_comment">
-              <img src="/comment.png" alt="comment section">
+              <NuxtLink to="/comments"><img src="/comment.png" alt="comment section"></NuxtLink>
               <a>{{item.commentcount}}</a>
             </div>
             <div class="contentcard_socials_bookmark">
