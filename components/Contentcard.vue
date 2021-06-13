@@ -2,11 +2,9 @@
 <div class="rootclass">
     <div v-for="item in serverResponse.data" :key="item.postedDate" class="contentcard"> 
           <div class="contentcard_title">
-            <a>{{item.name}}</a>
+            <a :href="item.resourcelink">{{item.name}}</a>
           </div>
-          <div class="contentcard_source">
-            <a :href="item.resourcelink">click here to access</a>
-          </div>
+          
           <div class="contentcard_tags">
             #{{item.resourcetype}} 
           </div>        
@@ -19,11 +17,15 @@
               <button v-on:click="downVote(item._id)" type="submit">Downvote</button>
               <a>{{item.downvotecount}}</a>
             </div>
+            <div class="contentcard_socials_comment">
+              <img src="/comment.png" alt="comment section">
+              <a>{{item.commentcount}}</a>
+            </div>
             <div class="contentcard_socials_bookmark">
               <button type="submit">Save</button>
             </div>
-            <!-- <div>{{serverResponse.data["0"]}}</div> -->
           </div>
+          <br>
           <hr>
       </div>
     </div>
@@ -74,7 +76,7 @@ export default {
 <style scoped>
 .contentcard {
   margin: 4px 20px 10px 8px;
-  padding: 6px 6px 6px 6px;
+  padding: 6px 10px 0px 10px;
   /* border-style: solid;
   border-width: 0.25px;
   border-radius: 4px;
@@ -83,32 +85,22 @@ export default {
   border-color: grey; */
 }
 .contentcard_title{
-  font-size: 22px;
+  font-size: 24px;
+  text-align: center;
 }
 .contentcard_tags{
   font-size:16px;
+  text-align: center;
   color:grey;
+  margin: auto;
 }
 .contentcard_socials{
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: end;
+  justify-content: space-evenly;
 }
-.arrow-up {
-  width: 0; 
-  height: 0; 
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid grey;
-}
-.arrow-down{
-  width: 0; 
-  height: 0; 
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 10px solid grey;
-}
+
 .contentcard_socials_like{
   margin-right:5px;
 }
@@ -133,5 +125,11 @@ export default {
 }
 .contentcard_socials_bookmark{
   margin-right:5px;
+}
+.contentcard_socials_comment img{
+  width:28px;
+}
+.contentcard_socials_comment:hover{
+cursor: pointer;
 }
 </style>

@@ -19,4 +19,7 @@ html {
 .nav{
   margin: 15px;
 }
+body{
+  padding: 0px 10% 0px 10%;
+}
 </style>

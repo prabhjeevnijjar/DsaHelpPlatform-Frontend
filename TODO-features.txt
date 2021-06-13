@@ -1,4 +1,11 @@
-TODO
-realtime comment section
-bookmark/save feature for user
-add hashtags in database as well and render them in front end
+TODO Features
+[] realtime comment section laterrr in the time
+[] bookmark/save feature for user backend/localstorage implementation
+[] add hashtags in database as well and render them in front end
+[] toaster for events
+[] login setup
+[] search component elastic search or some kind of live searching 
+[] delete your comment API
+[] What's new API
+[] Featured API
+[] Comment count API

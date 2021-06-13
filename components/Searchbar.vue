@@ -23,5 +23,8 @@ export default {
   border-width: 0.25px;
   padding: 3px 3px 3px 9px;
 }
+  .searchbar input:focus, textarea:focus, select:focus{
+        outline: none;
+    }
 
 </style>
