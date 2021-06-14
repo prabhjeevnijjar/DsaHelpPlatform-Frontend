@@ -3,7 +3,7 @@
     <div v-for="item in serverResponse.data" :key="item.postedDate" class="contentcard"> 
           <div class="contentcard_title">
             <a :href="item.resourcelink">{{item.name}}</a>
-          </div>
+          </div>{{item._id}}
           
           <div class="contentcard_tags">
             #{{item.resourcetype}} 
@@ -20,6 +20,7 @@
             <div class="contentcard_socials_comment">
               <nuxt-link :to="{ path: '/comments',
                query: {
+                  commentId: item._id,
                   link: item.resourcelink,
                   name: item.name,
                   commentCount: item.commentcount,

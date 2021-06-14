@@ -28,14 +28,15 @@
 </template>
 <script>
 export default {
-      props: ['link','name','commentCount','upvoteCount','downVoteCount'],
+      props: ['link','name','commentCount','upvoteCount','downVoteCount','commentId'],
       data: function() {
           return {
               link: this.link,
               name: this.name,
               commentCount: this.commentCount,
               upvoteCount: this.upvoteCount,
-              downVoteCount: this.downVoteCount
+              downVoteCount: this.downVoteCount,
+              commentId: this.commentId
           }
       }
 
